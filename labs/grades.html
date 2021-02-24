@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Retrieve Grade</title>
+
+    <meta charset="utf-8" />
+    <meta name="referer" content="origin-when-cross-origin">
+
+    <link href="../css/grades.css" type="text/css" rel="stylesheet" />
+
+    <style>
+        div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Retrieve your grade</h1>
+    <form action="http://mumstudents.org/params.php">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="My Name" />
+        </div>
+        <div>
+            <label for="student_id">Student ID:</label>
+            <input type="text" name="student_id" value="11111" />
+        </div>
+        <div>
+            <label for="assignment">Assignment:</label>
+            <select name="assignment">
+                <option value="midterm">midterm</option>
+                <option value="final">final</option>
+            </select>
+        </div>
+        <div>
+            <label for="entry_title">Entry:</label><br>
+            <input type="radio" name="entry" value="february">
+            <label for="february">February</label><br>
+            <input type="radio" name="entry" value="may">
+            <label for="may">May</label><br>
+            <input type="radio" name="entry" value="august">
+            <label for="august">August</label><br>
+            <input type="radio" name="entry" value="november">
+            <label for="november">November</label><br>
+        </div>
+        <div>
+            <input type="checkbox" name="not_lying" value="NotLying">
+            <label for="not_lying">I confirm that I am not lying</label>
+        </div>
+        <input type="submit" value="Get Grade!" />
+    </form>
+</body>
+
+</html>
