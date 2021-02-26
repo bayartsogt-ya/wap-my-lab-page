@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NerdLuv</title>
+    <meta charset="utf-8" />
+    <meta name="referer" content="origin-when-cross-origin">
+    <link href="../css/nerdluv.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <img src="../images/nerdluv_logo.png" alt="logo" />
+        <form id="form_signup" action="signup.php">
+            <div class="form_title">New User Signup:</div>
+            <div>
+                <label class="input_head" for="name">Name:</label>
+                <input class="input_16ch_long" type="text" name="name" />
+            </div>
+            <div>
+                <label class="input_head" for="gender">Gender:</label>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="female">Female</label>
+            </div>
+            <div>
+                <label class="input_head" for="age">Age:</label>
+                <input class="input_6ch_long" type="text" name="age" maxlength="2" />
+            </div>
+            <div>
+                <label class="input_head" for="personality_type">Personality type:</label>
+                <input class="input_6ch_long" type="text" name="personality_type" />
+                (<a href="http://www.humanmetrics.com/cgi-win/jtypes2.asp">Don't know your type?</a>)
+            </div>
+            <div>
+                <label class="input_head" for="os">Favorite OS:</label>
+                <select name="os">
+                    <option value="windows">Windows</option>
+                    <option value="macos">Mac OS X</option>
+                    <option value="linux">Linux</option>
+                </select>
+            </div>
+            <div>
+                <label class="input_head" for="seeking_age">Seeking age:</label>
+                <input class="input_6ch_long" type="text" maxlength="2" name="seeking_age_min" placeholder="min" />
+                to
+                <input class="input_6ch_long" type="text" maxlength="2" name="seeking_age_max" placeholder="max" />
+            </div>
+
+            <div>
+                <input class="input_submit" type="submit" value="Sign Up" />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
