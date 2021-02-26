@@ -63,6 +63,19 @@ form > div {
     margin: 5px;
 }
 
-/* a:active {
-    font-style;
-} */
+
+#back_button {
+    width: 30px;
+    float: left;
+}
+
+.go_back_section {
+    display: flex;
+    align-items: center;
+}
+
+
+.validators {
+    margin-top: 40px;
+}
+
