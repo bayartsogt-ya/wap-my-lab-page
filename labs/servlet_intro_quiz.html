@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Introduction to Servlets Quiz</title>
+</head>
+
+<body>
+
+    <h3>Introduction to Servlets Quiz</h3>
+
+    <ol>
+        <li>
+            What is the difference between a web server and a web container?<br>
+            Answer:
+            Web server is hardware prepared for clients to interact with the whole system while<br>
+            web container is solely responsible for connecting and processing client side information with knowing the<br>
+            outside sources, such as database and other applications.<br>
+        </li>
+        <li>
+            What is a servlet?<br>
+            Answer: Servlet is a class for handling a request from the client side.
+        </li>
+        <li>
+            How do web servers and web containers interact with servlets?<br>
+            Answer: creating servlet object and using methods such as init, service, destroy...
+        </li>
+        <li>
+            Who creates request objects?<br>
+            Answer: Client side creates the request object.
+        </li>
+        <li>
+            What are the states in the servlet lifecycle?<br>
+            Answer: init, service, destroy
+        </li>
+        <li>
+            Who calls init and when?<br>
+            Answer: Web container calls init when servlet object first created.
+        </li>
+        <li>
+            Which of init, service, and doGet should you override?<br>
+            Answer: doGet
+        </li>
+        <li>
+            In what sense are servlets multi-threaded?<br>
+            Answer: In sense of calling "service" method, it is multi-threaded.
+        </li>
+        <li>
+            What are the implications of this for servlet instance variables? <br>
+            Answer: Instance variables can be shared concurrently.
+        </li>
+    </ol>
+
+
+
+</body>
+
+</html>
