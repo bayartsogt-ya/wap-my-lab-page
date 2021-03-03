@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Introduction to Servlets Quiz</title>
+</head>
+
+<body>
+    <h3>JSP Introduction Quiz</h3>
+
+    <div>
+        <a href="http://mumstudents.org/cs472/2021-03-BL/Labs/Servlet_Intro_Lab.pdf">Quiz pdf link</a>
+    </div>
+    <ol>
+        <li>
+            What is the main value of Java Server Pages? <br>
+            Answer: Simpler interface for developers.
+        </li>
+
+        <li>
+            How are JSP pages related to servlets? <br>
+            Answer: Making use of the compiler, it can be converted into servlet code.
+        </li>
+        <li>
+            How are JSP pages related to HTML? <br>
+            Answer: After compiling into servlet code (more specifically `out.print`), it can generate dynamic html.
+        </li>
+        <li>
+            Give an example of a JSP scriptlet and show how it will look in the JSP servlet . <br>
+            Answer: 
+            <code> <% String username = request.getParameter("username"); %> => String username = request.getParameter("username"); </code>
+        </li>
+        <li>
+            Give an example of a JSP declaration and show how it will look in the JSP servlet. <br>
+            Answer:<br>
+            <code> <%! String count = 2; %> => String count = 2;</code><br>
+        </li>
+        <li>
+            Give an example of a JSP comment and show how it will look in the JSP servlet. <br>
+            Answer:<br>
+            <code> <%-- comment --%> => out.print(html comment string)</code><br>
+        </li>
+        <li>
+            Give an example of a JSP expression and show how it will look in the JSP servlet. <br>
+            Answer:<br>
+            <code><%= count %> => out.print(count)</code>
+        </li>
+        <li>
+            Give an example of a JSP directive and show how it will look in the JSP servlet. <br>
+            Answer:<br>
+            <code><%@page import="java.util.Date" %> => (at the top of JSP servlet) import java.util.Date</code>
+        </li>
+        <li>
+            Explain how an EL expression is evaluated. <br>
+            Answer:<br>
+            EL simplifies the JSP expressions. <br>
+            ${something}
+            <ol>
+                <li>search in "page scope" or inside the jsp</li>
+                <li>otherwise search in "request scope"</li>
+                <li>otherwise search in "session scope"</li>
+                <li>otherwise search in "application scope" such as among the models</li>
+                <li>otherwise ignore</li>
+            </ol>
+        </li>
+        <li>
+            Explain how servlet attributes are involved in EL expressions. <br>
+            Answer:<br>
+            If it is asking about the servlet as a controller dispatching into JSP file, EL cannot find an involvement there.
+            However, if it is asking servlet as a compiled JSP file, it can be any match of attributes written in JSP expressions.
+        </li>
+        <li>
+            Explain how servlets and JSPs use request dispatch to interact <br>
+            Answer:<br>
+            Request Dispatcher in Servlet (controller) directly calling the JSP file (view) from file system to create dynamic html and send it for the incoming request as a response. 
+        </li>
+    </ol>
+</body>
+</html>
