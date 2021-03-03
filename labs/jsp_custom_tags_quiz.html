@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Introduction to Servlets Quiz</title>
+</head>
+
+<body>
+    <h3>JSP Custom Tags Quiz</h3>
+
+    <div>
+        <a href="http://mumstudents.org/cs472/2021-03-BL/quiz/JSP_Custom_Tags_Quiz.pdf">Quiz pdf link</a>
+    </div>
+    
+    <ol>
+    <li>
+        Rewrite the JSP page in the first demo (forEach) to use scripting instead of the JSTL forEach.<br>
+        Answer: <br>
+        <pre>
+            <%
+                for (Student student: (Student[]) request.getAttribute("students")) {
+                    out.write("<%tr>");
+                    out.write("<%td>" + student.age + "<%/td>");
+                    out.write("<%td>" + student.name + "<%/td>");
+                    out.write("<%/tr>");
+                }
+            %>
+        </pre>
+    </li>
+    <li>
+        How do custom tags relate to JSTL?<br>
+        Answer: <br>
+        JSTL and its 5 different tags are actually custom tags. Basically it provides simpler dynamic html pages.
+    </li>
+    <li>
+        What is the role of the URI in the TLD and the taglib directive?<br>
+        Answer: <br>
+        <ul>
+            <li>uri -> source of the code working behind the tag logic (.tld file)</li>
+            <li>tablib directive -> is a way of declaring that using this prefix we should use this custom tag</li>
+        </ul>
+    </li>
+    <li>
+        What is a tag handler class?<br>
+        Answer: <br>
+        Tag handler is a class extended from SimpleTagSupport and it will provide helper methods which will later be used in JSP file.
+    </li>
+    <li>
+        What is the role of attribute setters in a tag handler class?<br>
+        Answer: <br>
+        setters are for getting the inputs from JSP then change the instance variable values.
+    </li>
+    <li>
+        What is the role of the doTag() method in a tag handler class?<br>
+        Answer: <br>
+        it is passing a dynamic html element to JSP file using JSPWriter.write
+    </li>
+    <li>
+        What does the operation getJspContext().getOut().write(“Hi Bob”) do when called in a doTag() method?<br>
+        Answer: <br>
+        It will add "Hi Bob" simple text element to JSP file.
+    </li>
+    <li>
+        What does the operation getJspBody().invoke(null) do when called in a doTag() method?<br>
+        Answer: <br>
+        It will pass the content changed in doTag() method to the client directly instead of the JSP code.
+    </li>
+    </ol>
+</body>
+</html>
