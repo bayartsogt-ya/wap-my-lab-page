@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Timer Exercise</title>
+</head>
+
+<body>
+    <h3>Javascript Timer Exercise</h3>
+
+    <div>
+        <a href="http://mumstudents.org/cs472/2019-05-BL/quiz/JavascriptExercises.pdf">Quiz pdf link</a>
+    </div>
+    <pre>
+        ----------
+        1. What is the difference between the following 2 statements?
+        setTimeout(booyah, 2000);
+        setTimeout(booyah(), 2000);
+
+        [Answer]
+        setTimeout(booyah, 2000); // -> boolah is going to be called after 2000 ms
+        setTimeout(booyah(), 2000); // -> boolah will be called imediately
+
+        ----------
+        2. What do the following 2 alerts display (answer without running the code)?
+        var myfunc = function(a, x) {
+            return a * x;
+        };
+        var x = myfunc(2, 3);
+        var y = myfunc;
+        alert(x);
+        alert(y(2,3));
+
+        [Answer]
+        6
+        6
+
+        ----------
+        3. Write functions booyah1 and booyah2 so that in both cases below, an alert box comes up after 2 seconds that
+        says “BOOYAH!”
+        setTimeout(booyah1, 2000);
+        setTimeout(booyah2(), 2000);
+
+        [Answer]
+        function booyah1(){
+            alert("BOOYAH!");
+        }
+
+        function booyah2(){
+            return booyah1;
+        }
+
+        ----------
+        4. What is "Unobtrusive Javascript"? What is the practical application of Unobtrusive Javascript (and the reasons
+        for using it)?
+        
+        [Answer]
+        > What is "Unobtrusive Javascript"?: 
+        Writing javascript as a completely separate file. 
+
+        > What is the practical application of Unobtrusive Javascript (and the reasons for using it)?
+        No JS code inside HTML. (even no function call inside button tag, such as onclick)
+
+        Main reason is the sepration of concepts:
+            - content (html)
+            - presentation (css)
+            - behavior (js)
+
+    </pre>
+</body>
+</html>
