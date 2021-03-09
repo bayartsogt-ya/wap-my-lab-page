@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Text Decorator</title>
+		<!-- <link href="decoratemytext.css" type="text/css" rel="stylesheet" /> -->
+		
+		<!-- link to your script file here -->
+		<script src="../js/decoratemytext.js"></script>
+		
+	</head>
+
+	<body>
+		<h1>Text Decorator</h1>
+		
+		<div>
+			<img src="../images/decorated.gif" alt="very decorated!" />
+		</div>
+
+		<!-- Your UI controls go here -->
+
+		<div class="bordered_field">
+			<p class="p_title">Text</p>
+			<textarea cols="30" rows="4" id="text_area" style="font-size: 12px;">
+Sample Item 1
+Sample Item 2
+			</textarea>
+		</div>
+
+		<pre>
+*Changed "pt" to "px" because of unstability.
+		</pre>
+
+		<div class="bordered_field">
+			<p class="p_title">Decoration</p>
+			<button onclick="biggerDecoration()">Bigger Decorations!</button><br>
+			<input type="checkbox" id="bing" onchange="binger()">
+			<label for="bing" > Bing</label>
+		</div>
+		<!-- <div class="bordered_field">
+			<p class="p_title">Igpay Atinlay</p>
+			<button onclick="igpayAtinlay()">Igpay Atinlay</button>
+		</div> -->
+
+		
+		
+	</body>
+</html>
