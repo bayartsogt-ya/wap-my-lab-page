@@ -1,0 +1,56 @@
+body {
+    background-color: #CCCCFF;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32pt;
+}
+
+select {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+button {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.validator {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+textarea {
+    width: 90%;
+    height: 400px;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.controlGroupContainerDiv {
+    display: inline-block;
+}
+
+.controlGroup {
+    position: relative;
+    width: 95pt;
+    border: solid black 5px;
+    float: left;
+    padding: 15px;
+    margin: 5px;
+}
+
+.controlGroup > span {
+    position: absolute;
+    top: -10pt;
+    left: 8pt;
+    background-color: #CCCCFF;
+}
+
