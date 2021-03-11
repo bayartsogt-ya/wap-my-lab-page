@@ -60,30 +60,53 @@
         4. What will be printed by the following (answer without running it)?
         var x = 9;
         function myFunction() {
-        return x * x;
+            return x * x;
         }
         document.write(myFunction());
         x = 5;
         document.write(myFunction());
+
+        [Answer]
+        81, 25
+
         5.
         var foo = 1;
         function bar() {
             if (!foo) {
-            var foo = 10;
+                var foo = 10; // this line will be compiled first because var is function scope. if it was let then alert(foo will be 1)
             }
             alert(foo);
         }
         bar();
         What will the alert print out? (Answer without running the code. Remember ‘hoisting’.)?
+        [Answer]
+        10
+
         6. Consider the following definition of an add( ) function to increment a counter variable:
         var add = (function () {
-        var counter = 0;
-        return function () {
-        return counter += 1;
-        }
+            var counter = 0;
+            return function () {
+                return counter += 1;
+            }
         })();
         Modify the above module to define a count object with two methods: add( ) and reset( ). The count.add( ) method
         adds one to the counter (as above). The count.reset( ) method sets the counter to 0.
+        [Answer]
+        var count = (function () {
+            var counter = 0;
+            return {
+                'add': function () {
+                    counter += 1;
+                },
+                'reset': function () {
+                    counter = 0;
+                },
+                'value': function () {
+                    return counter;
+                },
+            }
+        })();
+
         7. In the definition of add( ) shown in question 6, identify the "free" variable. In the context of a function closure,
         what is a "free" variable?
         8. The add( ) function defined in question 6 always adds 1 to the counter each time it is called. Write a definition
