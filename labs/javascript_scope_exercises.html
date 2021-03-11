@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Timer Exercise</title>
+</head>
+
+<body>
+    <h3>Javascript Timer Exercise</h3>
+
+    <div>
+        <a href="http://mumstudents.org/cs472/2019-05-BL/quiz/ScopeExercises.pdf">Quiz pdf link</a>
+    </div>
+    <pre>
+        1. Determine what this Javascript code will print out (without running it):
+
+        [Answer]
+        x = 1;
+        var a = 5;
+        var b = 10;
+        var c = function(a, b, c) {
+            document.write(x); // undefined -> because it is initialized at the end of a method.
+            document.write(a); // 8
+            var f = function(a, b, c) {
+                b = a; // a=8, b=8, c=10
+                document.write(b); // 8
+                b = c; // b=8
+                var x = 5;
+            }
+            f(a,b,c);
+            document.write(b); // 9
+            var x = 10;
+        }
+        c(8,9,10);
+        document.write(b); // 10
+        document.write(x); // 1
+        }
+        [Answer]
+        // output => undefined889101
+
+        2. What is the difference between a method and function?
+
+        [Answer]
+        A function is called by name and works as a (first-class) variable while a method is only accessible from its object.
+
+        3. What does 'this' refer to when used in a Java method?
+
+        [Answer]
+        "this" is nearest class itself.
+
+        4. What does 'this' refer to when used in a JavaScript method?
+
+        [Answer]
+        in JS, "this" is window.
+
+        5. What does 'this' refer to when used in a JavaScript constructor function?
+
+        [Answer]
+        "this" is object created inside constructor.
+
+        6. Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword 'this'.
+        When f is called by x.f( ), what does 'this' refer to?
+
+        [Answer]
+        this refers x
+
+        7. What is a free variable in JavaScript?
+
+        [Answer]
+        A free variable is already declared objects that accessible by methods.
+
+        8. Create an object that has properties with name = "fred" and major="music" and a property that is a function
+        that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
+
+        [Answer]
+        var ob = (() => {
+            return {
+                'name': 'fred',
+                'major': 'music',
+                'someFunc': (num1, num2) => {
+                    if (num1 === num2) {
+                        return num1 ** 2 + num2 ** 2;
+                    } else if ((num1 > num2)) {
+                        return num2;
+                    } else {
+                        return num1;
+                    }
+                }
+            }
+        })();
+
+        9. Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function.
+        Employee objects have the following fields: name, salary, position.
+        
+        [Answer]
+        function Employee(name, salary, position) {
+            this.name = name;
+            this.salary = salary;
+            this.position = position;
+        };
+
+        10. Write a Javascript function that takes any number of input arguments and returns the product of the
+        arguments.
+
+        [Answer]
+        var findProduct = (...values) => {
+            eval(values.join('*'));
+        }
+
+        11. Write an arrow function that returns the maximum of its three input arguments.
+        
+        [Answer]
+        var findMax = (num1, num2, num3) {
+            return Math.max(num1, num2, num3);
+        }
+
+    </pre>
+</body>
+</html>
