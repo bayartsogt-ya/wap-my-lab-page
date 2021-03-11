@@ -12,6 +12,7 @@ var loseFunc = () => {
 }
 
 $(document).ready(() => {
+    $("#congratzImg").hide();
 
     $("#start").click((e) => { 
         console.log("started");
@@ -19,6 +20,7 @@ $(document).ready(() => {
         wallHit = false;
         $(".boundary").removeClass("youlose");
         $("h2").text("Game On!");
+        $("#congratzImg").hide();
     });
 
     $("#maze").mouseleave(() => { 
@@ -32,6 +34,7 @@ $(document).ready(() => {
     $("#end").mouseover(() => {
         if (started && !wallHit){
             $("h2").text("You win :]");
+            $("#congratzImg").show();
             started = false;
         }
     });
