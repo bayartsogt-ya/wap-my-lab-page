@@ -109,6 +109,10 @@
 
         7. In the definition of add( ) shown in question 6, identify the "free" variable. In the context of a function closure,
         what is a "free" variable?
+        [Answer]
+        counter is free variable.
+        A free variable is local variable that can be accessible by sub-methods.
+
         8. The add( ) function defined in question 6 always adds 1 to the counter each time it is called. Write a definition
         of a function make_adder(inc), whose return value is an add function with increment value inc (instead of 1). Here
         is an example of using this function:
@@ -116,9 +120,34 @@
         add5( ); add5( ); add5( ); // final counter value is 15
         add7 = make_adder(7);
         add7( ); add7( ); add7( ); // final counter value is 21
+        [Answer]
+        var count = (function () {
+            var counter = 0;
+            return {
+                'add': function () {
+                    counter += 1;
+                },
+                'reset': function () {
+                    counter = 0;
+                },
+                'value': function () {
+                    return counter;
+                },
+                'make_adder': function (inc) {
+                    counter += inc;
+                }
+            }
+        })();
+
         9. Suppose you are given a file of Javascript code containing a list of many function and variable declarations. All of
         these function and variable names will be added to the Global Javascript namespace. What simple modification to
         the Javascript file can remove all the names from the Global namespace?
+        [Answer]
+        You can wrap it like below.
+
+        (function () {
+            All the given code
+        })();
 
 
         10. Using the Revealing Module Pattern, write a Javascript definition of a Module that creates an Employee Object
@@ -134,16 +163,121 @@
         Private Method: getName( )
         Public Method: increaseSalary(percentage) // uses private getSalary( )
         Public Method: incrementAge( ) // uses private getAge( )
+        
+        [Answer]
+        // >>>> Revealing Module Pattern <<<<
+
+        var Employee = (function () {
+            var name;
+            var age;
+            var salary;
+            var getName = () => {return name};
+            var getAge = () => {return age};
+            var getSalary = () => {return salary};
+
+            var setName = (newName) => {name = newName;},
+            var setAge = (newAge) => {age = newAge;},
+            var setSalary = (newSalary) => {salary = newSalary;},
+            var increaseSalary = (percentage) => {salary = salary * (1 + percentage / 100);},
+            var incrementAge = () => {age ++ ;},
+
+            return {
+                'setName' : setName,
+                'setAge' : setAge,
+                'setSalary' : setSalary,
+                'increaseSalary' : increaseSalary,
+                'incrementAge' : incrementAge,
+            }
+        })();
+
+        Comment: Since name age & salary are free variables we don't need private getter methods.
+
         11. Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern.
+        [Answer]
+        // >>>> Anonymous Object Literal Return Pattern <<<<
+        var Employee = (function () {
+            var name;
+            var age;
+            var salary;
+            var getName = () => {return name};
+            var getAge = () => {return age};
+            var getSalary = () => {return salary};
+
+            return {
+                'setName' : (newName) => {name = newName;},
+                'setAge' : (newAge) => {age = newAge;},
+                'setSalary' : (newSalary) => {salary = newSalary;},
+                'increaseSalary' : (percentage) => {salary = salary * (1 + percentage / 100);},
+                'incrementAge' : () => {age ++ ;},
+            }
+        })();
+
+
+
         12. Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern.
+        [Answer]
+        // >>>> Locally Scoped Object Literal Pattern <<<<
+        var Employee = (function () {
+            var Contructor = {};
+
+            var name;
+            var age;
+            var salary;
+            var getName = () => {return name};
+            var getAge = () => {return age};
+            var getSalary = () => {return salary};
+
+            Contructor.setName = (newName) => {name = newName;},
+            Contructor.setAge = (newAge) => {age = newAge;},
+            Contructor.setSalary = (newSalary) => {salary = newSalary;},
+            Contructor.increaseSalary = (percentage) => {salary = salary * (1 + percentage / 100);},
+            Contructor.incrementAge = () => {age ++ ;},
+
+            return Contructor;
+        })();
+
         13. Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and
         public methods setAddress(newAddress) and getAddress( ).
+        
+        [Answer]
+        var Employee = (function () {
+            var name;
+            var age;
+            var salary;
+
+            var getName = () => {return name};
+            var getAge = () => {return age};
+            var getSalary = () => {return salary};
+
+            var setName = (newName) => {name = newName;},
+            var setAge = (newAge) => {age = newAge;},
+            var setSalary = (newSalary) => {salary = newSalary;},
+            var increaseSalary = (percentage) => {salary = salary * (1 + percentage / 100);},
+            var incrementAge = () => {age ++ ;},
+
+            return {
+                'address':null,
+                'getAddress': () => {return address;},
+                'setAddress': (newAddress) => {address = newAddress;},
+
+                'setName' : setName,
+                'setAge' : setAge,
+                'setSalary' : setSalary,
+                'increaseSalary' : increaseSalary,
+                'incrementAge' : incrementAge,
+            }
+        })();
+
+
         14. What is the output of the following code?
         const promise = new Promise((resolve, reject) => {
-        reject(“Hattori”);
+            reject(“Hattori”);
         });
         promise.then(val => alert(“Success: “ + val))
-        .catch(e => alert(“Error: “ + e));
+            .catch(e => alert(“Error: “ + e));
+
+        
+        
         15. What is the output of the following code?
         const promise = new Promise((resolve, reject) => {
         resolve(“Hattori”);
