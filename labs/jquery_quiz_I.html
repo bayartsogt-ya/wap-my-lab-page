@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Quiz I</title>
+</head>
+
+<body>
+    <h3>jQuery Quiz I</h3>
+
+    <div>
+        <a href="http://mumstudents.org/cs472/2019-05-BL/quiz/jQueryQuizI.pdf">Quiz pdf link</a>
+    </div>
+    <pre>
+        1. In jQuery terminology, what is the difference between the “jQuery function” and the “jQuery object”?
+        
+        [Answer]
+        jQuery function is simply the method to change the state of object.
+        jQuery object is wrapper of DOM object.
+
+        2. Write jQuery code to find all h1 elements that are children of a div element and make their background
+        color red.
+        Sample HTML:
+        &lt;body&gt; 
+            &lt;h1&gt;abc&lt;/h1&gt;&lt;br&gt;
+            &lt;div&gt; 
+                &lt;h1&gt;div-1&lt;/h1&gt; 
+                &lt;h1&gt;div-2&lt;/h1&gt;
+            &lt;/div&gt;
+            &lt;h1&gt;xyz&lt;/h1&gt;
+        &lt;/body&gt;
+
+        [Answer]
+        $("div h1").css("background-color", "red");
+
+        3. Use a jQuery method to insert the text "YES!" at the end of the &lt;p&gt; element.
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+            &lt;script&gt;
+            &lt;!&mdash;INSERT YOUR JQUERY CODE HERE - - &gt;
+            $("&lt;span&gt;YES!&lt;/span&gt;").insertAfter("p");
+            &lt;/script&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;p&gt;Is jQuery FUN or what? &lt;/p&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </pre>
+</body>
+</html>
