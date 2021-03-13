@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Quiz II</title>
+</head>
+
+<body>
+    <h3>jQuery Quiz II</h3>
+
+    <div>
+        <a href="http://mumstudents.org/cs472/2019-05-BL/quiz/jQueryQuizII.pdf">Quiz pdf link</a>
+    </div>
+    <pre>
+1. Which, if any, of the following 3 code fragments are equivalent? Explain why they are different, if
+they are. Explain why they can have different parameters and be equivalent, if they are equivalent.
+    //code fragment 1
+    $("li").each(function(idx, e) {
+    $(e).css(“color”, “yellow”); });
+    //code fragment 2
+    $("li").each(function() {
+    $(this).css(“color”, “yellow”); });
+    //code fragment 3
+    $("li").each(function(idx) {
+    $(this).css(“color”, “yellow”); });
+
+    [Answer]
+    fragment 1 will change all the element colors to yellow because it is looping over `e`
+    fragment 2 will change only element where event occured because of "this"
+    fragment 3 will change only element where event occured because of "this"
+
+2. Write a jQuery expression to find all divs on a page that include an unordered list in them, and make
+their text color be blue.
+    &lt;div&gt;no ul here &lt;/div&gt;
+    &lt;div&gt;
+    This does contain a ul.
+        &lt;ul&gt;
+            &lt;li&gt;the first item&lt;/li&gt;
+            &lt;li&gt;the second item&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt; !—INSERT YOUR JQUERY CODE HERE - - &gt;
+    &lt;script&gt;
+    $("div:has(ul)").css("color", "blue");
+    &lt;/script&gt;
+    &lt;/body&gt;
+3. Write jQuery code to append the following div element (and all of its contents) dynamically to the body
+element.
+    &lt;div&gt;&lt;h1&gt;JQuery Core&lt;/h1&gt;&lt;/div&gt;
+    HTML:
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;JS Bin&lt;/title&gt;
+        &lt;script src="http://code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+
+        &lt;/body&gt;
+        &lt;script src="local_path.js"&gt;&lt;/script&gt;
+        &lt;/html&gt; 
+    JS //local_path.js
+        $("body").append("&lt;div&gt;&lt;h1&gt;JQuery Core&lt;/h1&gt;&lt;/div&gt;");
+</pre>
+</body>
+
+</html>
