@@ -20,7 +20,8 @@
         var a = 5;
         var b = 10;
         var c = function(a, b, c) {
-            document.write(x); // undefined -> because it is initialized at the end of a method.
+            var x = 10;
+            document.write(x); // 10
             document.write(a); // 8
             var f = function(a, b, c) {
                 b = a; // a=8, b=8, c=10
@@ -30,14 +31,13 @@
             }
             f(a,b,c);
             document.write(b); // 9
-            var x = 10;
         }
         c(8,9,10);
         document.write(b); // 10
         document.write(x); // 1
         }
         [Answer]
-        // output => undefined889101
+        // output => 10889101
 
         2. What is the difference between a method and function?
 
@@ -52,7 +52,10 @@
         4. What does 'this' refer to when used in a JavaScript method?
 
         [Answer]
-        in JS, "this" is window.
+        It depends on context:
+            - in function, this refers to the global object
+            - in event handler, this refers to the current element that received that event
+            - otherwise, this refers to global object
 
         5. What does 'this' refer to when used in a JavaScript constructor function?
 
@@ -68,7 +71,7 @@
         7. What is a free variable in JavaScript?
 
         [Answer]
-        A free variable is already declared objects that accessible by methods.
+        A variable that called by the current function but not one of its parameters or local variables.
 
         8. Create an object that has properties with name = "fred" and major="music" and a property that is a function
         that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
@@ -105,13 +108,13 @@
 
         [Answer]
         var findProduct = (...values) => {
-            eval(values.join('*'));
+            return eval(values.join('*'));
         }
 
         11. Write an arrow function that returns the maximum of its three input arguments.
         
         [Answer]
-        var findMax = (num1, num2, num3) {
+        var findMax = (num1, num2, num3) => {
             return Math.max(num1, num2, num3);
         }
 
