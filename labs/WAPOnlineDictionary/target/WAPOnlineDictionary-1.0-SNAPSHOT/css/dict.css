@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    padding-block-start: 0.67em;
+    padding-block-end: 0.67em;
+    margin: 0;
+    background-color: #e4e4e4;
+}
+
+div#searchDiv{
+    padding: 0.67em;
+    background-color: #eeeeee;
+}

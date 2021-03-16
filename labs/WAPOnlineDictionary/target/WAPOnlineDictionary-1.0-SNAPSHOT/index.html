@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WAP Dictionary</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    
+    <!-- Local imports -->
+    <link href="./css/dict.css" rel="stylesheet" >
+    <script src="./js/dict.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- Header -->
+    <h1> WAP Online Dictionary </h1>
+    
+    <!-- Search Section -->
+    <div id="searchDiv">
+        <span>Term:</span>
+        <input type="text" id="word" placeholder="Please enter a word" value="king">
+        <button id="lookupBtn">Lookup</button>
+        <img id="searchResultLoader" src="./images/loader.gif" alt="search result loader" width="13px">
+    </div>
+
+    <!-- Result Section -->
+    <div id="searchResultDiv"></div>
+</body>
+</html>
