@@ -271,40 +271,53 @@
 
         14. What is the output of the following code?
         const promise = new Promise((resolve, reject) => {
-            reject(“Hattori”);
+            reject("Hattori");
         });
-        promise.then(val => alert(“Success: “ + val))
-            .catch(e => alert(“Error: “ + e));
+        promise.then(val => alert("Success: " + val))
+            .catch(e => alert("Error: " + e));
 
-        
+        [Answer]
+        It is going to alert => "Error: Hattori"
+        then it is going to change the state of promise as a `fullfilled`        
         
         15. What is the output of the following code?
         const promise = new Promise((resolve, reject) => {
-        resolve(“Hattori”);
-        setTimeout(()=> reject(“Yoshi”), 500);
+            resolve("Hattori");
+            setTimeout(()=> reject("Yoshi"), 500);
         });
-        promise.then(val => alert(“Success: “ + val))
-        .catch(e => alert(“Error: “ + e));
+        promise.then(val => alert("Success: " + val))
+               .catch(e => alert("Error: " + e));
+
+        [Answer]
+        It is going to alert => "Success: Hattori"
 
 
         16. What is the output of the following code?
         function job(state) {
-        return new Promise(function(resolve, reject) {
-        if (state) {
-        resolve('success');
-        } else {
-        reject('error');
-        }
-        });
+            return new Promise(function(resolve, reject) {
+                if (state) {
+                    resolve('success');
+                } else {
+                    reject('error');
+                }
+            });
         }
         let promise = job(true);
         promise.then(function(data) {
-        console.log(data);
-        return job(false);})
-        .catch(function(error) {
-        console.log(error);
-        return 'Error caught';
+            console.log(data);
+            return job(false);
+        }).catch(function(error) {
+            console.log(error);
+            return 'Error caught';
         });
+
+        [Answer]
+        ** In console: **
+        success
+        error
+
+        * promise result will be `Error caught`
+
     </pre>
 </body>
 </html>
